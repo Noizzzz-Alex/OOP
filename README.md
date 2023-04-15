@@ -1,1 +1,1 @@
-# OOP
+# OOP training repo
