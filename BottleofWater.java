@@ -15,7 +15,7 @@ public class BottleofWater extends Product {
     @Override
     String displayInfo() {
         //return super.displayInfo();
-        return String.format("Название: %s |Цена: %.2f |Объем: %.1f",name, price,volume);
+        return String.format("Название: %-10s |Цена: %.2f |Объем: %.1f",name, price,volume);
     }
 
     public float getVolume() {

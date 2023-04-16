@@ -17,7 +17,7 @@ public class BottleofMilk extends Product{
     @Override
     String displayInfo() {
         //return super.displayInfo();
-        return String.format("Название: %s |Цена: %.2f |Объем: %.2f |Жирность: %.1f",name, price,volume,fat);
+        return String.format("Название: %-15s |Цена: %-6.2f |Объем: %-4.2f |Жирность: %.1f",name, price,volume,fat);
     }
 
     public float getVolume() {
