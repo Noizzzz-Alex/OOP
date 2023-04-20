@@ -28,7 +28,7 @@ public class Main {
         Object[] animals2 = new Object[] {catv2_2,catv2,dog_2,bird};
         for (Object a: animals2){
             if (a instanceof Flyable) {
-                System.out.println();
+                System.out.println(((Runnable) a).getName());
 }
         }
     }
