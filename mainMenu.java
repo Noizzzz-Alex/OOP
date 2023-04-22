@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class mainMenu {
-    public static void Menu(List<Cat> cats, Plate plate) {
+    public static void Menu() {
         Scanner sc = new Scanner(System.in);
         String str = "";
         while (!(str.equals("0"))) {
@@ -16,28 +16,16 @@ public class mainMenu {
             System.out.print("Choice: ");
             str = sc.nextLine();
             if (str.equals("1")) {
-                for (Cat cat : cats) {
-                    if (plate.availabilityOfFood(cat)) {
-                        cat.eat(plate);
-                    }
-                    else {
-                        System.out.println("Кот не притронулся к еде, т.к еды мало.");
-                    }
-
-                }
+                return;
             }
             if (str.equals("2")) {
-                System.out.print("Сколько добавить?: ");
-                str = sc.nextLine();
-                plate.setFood(Integer.parseInt(str));
+                return;
             }
             if (str.equals("3")) {
-                for (Cat cat : cats) {
-                    cat.getInfo();
-                }
+                return;
             }
             if (str.equals("4")) {
-                plate.info();
+                return;
             }
         }
     }
