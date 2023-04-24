@@ -5,7 +5,7 @@ public class Bird extends Animal implements Runnable, Flyable {
 
     @Override
     public void fly(int distance) {
-        System.out.printf("dog %s swim: %dm\n",getName(),distance);
+        System.out.printf("bird %s fly: %dm\n",getName(),distance);
     }
 
     @Override
@@ -21,5 +21,10 @@ public class Bird extends Animal implements Runnable, Flyable {
     @Override
     public void voice() {
 
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
     }
 }
