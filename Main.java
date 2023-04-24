@@ -13,7 +13,7 @@ public class Main {
         Animal animal2 = new Animal("Vermont", 5, 15);
         System.out.printf("Общее кол-во животных: %d\n",Animal.getCount());
         System.out.printf("Общее кол-во котов: %d\n",Cat.getCount());
-
+        System.out.printf("Общее кол-во собак: %d\n",Dog.getCount());
     }
 }
 
@@ -62,7 +62,7 @@ class Dog extends Animal {
         return count;
     }
 
-    public static int count;
+    static int count;
 
     {
         count++;
@@ -74,7 +74,7 @@ class Dog extends Animal {
 }
 
 class Cat extends Animal {
-    public static int count;
+    static int count;
 
     {
         count++;
