@@ -1,14 +1,13 @@
 import java.util.Comparator;
 
-public class SortOfSalary implements Comparator<Employee>{
-
+public class SortOfOld implements Comparator<Employee> {
     @Override
     public int compare(Employee o1, Employee o2) {
-        return Double.compare(o1.calculateSalary(),o2.calculateSalary());
+        return o1.getOld() - o2.getOld();
     }
+
     @Override
     public Comparator<Employee> reversed() {
         return Comparator.super.reversed();
     }
 }
-

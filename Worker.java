@@ -18,8 +18,9 @@ public class Worker extends Employee {
 
     @Override
     public String toString() {
-        return String.format("%-10s: %-10s%-10s | Ставка в день : %-7.2f | Отработанных дней : %-3d | З/п в месяц: %.2f"
-                , getClassEmployee(), name, lastName, salary, workDays, calculateSalary());
+        return String.format("%-15s: %-10s%-10s | Возраст: %-3d| Ставка в день : %-7.2f |" +
+                        " Всего дней : %-3d | З/п в месяц: %.2f"
+                , getClassEmployee(), name, lastName,old, salary, workDays, calculateSalary());
 
     }
 }

@@ -3,7 +3,11 @@ public abstract class Employee {
         return name;
     }
 
-    public Employee(String name, String lastName,int old, double salary) {
+    public int getOld() {
+        return old;
+    }
+
+    public Employee(String name, String lastName, int old, double salary) {
         this.name = name;
         this.lastName = lastName;
         this.old = old;
