@@ -11,32 +11,20 @@ public class Generator {
             "Nicole", "Rachel", "Hannah", "Katty"};
 
 
-    public static Worker generateWorker() {
+
+    public static Employee randomGenerate(){
+        Random random1 = new Random();
         Random random = new Random();
-        random.nextInt(0, 2);
-        //Создание Рабочего
+        int index = random1.nextInt(2);
+        if(index == 0){
             return new Worker(firstNames[random.nextInt(30)],
                     lastNames[random.nextInt(15)], random.nextDouble(5000, 10000)
                     , random.nextInt(21));
-
-    }
-    public static Freelancer generateFreelancer() {
-        Random random = new Random();
-        random.nextInt(0, 2);
-        //Создание Фрилансера
-        return new Freelancer(firstNames[random.nextInt(30)],
-                lastNames[random.nextInt(15)], random.nextDouble(500, 5000)
-                , random.nextInt(160));
-
-    }
-    public static Employee randomGenerate(){
-        Random random = new Random();
-        int index = random.nextInt(2);
-        if(index == 0){
-            return generateWorker();
         }
         else {
-            return generateFreelancer();
+            return new Freelancer(firstNames[random.nextInt(30)],
+                    lastNames[random.nextInt(15)], random.nextDouble(500, 5000)
+                    , random.nextInt(160));
         }
     }
 }

@@ -9,24 +9,17 @@ public class mainMenu {
         while (!(str.equals("0"))) {
             System.out.println("""
                     Список сотрудников :
-                    1 - Создать рабочего
-                    2 - Создать фрилансера
-                    3 - Создать случайного сотрудника
-                    4 - Вывести список всех сотрудников
+                    1 - Создать случайного сотрудника
+                    2 - Вывести список всех сотрудников
+                    3 - in process
+                    4 - in process
                     0 - Выход""");
             System.out.print("Choice: ");
             str = sc.nextLine();
             if (str.equals("1")) {
-                employees.add(Generator.generateWorker());
-            }
-            if (str.equals("2")) {
-                employees.add(Generator.generateFreelancer());
-            }
-            if (str.equals("3")) {
                 employees.add(Generator.randomGenerate());
             }
-            if (str.equals("4")) {
-
+            if (str.equals("2")) {
                 if(!employees.isEmpty()){
                     for (Employee e: employees) {
                         System.out.println(e);
@@ -35,7 +28,12 @@ public class mainMenu {
                 else {
                     System.out.println("Список пуст!");
                 }
-
+            }
+            if (str.equals("3")) {
+                return;
+            }
+            if (str.equals("4")) {
+                return;
             }
         }
     }
