@@ -1,11 +1,17 @@
 public abstract class Employee {
-    public Employee(String name, String lastName, double salary) {
+    public String getName() {
+        return name;
+    }
+
+    public Employee(String name, String lastName,int old, double salary) {
         this.name = name;
         this.lastName = lastName;
+        this.old = old;
         this.salary = salary;
     }
 
     protected String name;
+    protected int old;
     protected String lastName;
     protected double salary;
     abstract double calculateSalary();

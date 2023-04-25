@@ -1,8 +1,8 @@
 public class Worker extends Employee {
     private int workDays;
 
-    public Worker(String name, String lastName, double salary, int workDays) {
-        super(name, lastName, salary);
+    public Worker(String name, String lastName,int old, double salary, int workDays) {
+        super(name, lastName,old, salary);
         this.workDays = workDays;
     }
 

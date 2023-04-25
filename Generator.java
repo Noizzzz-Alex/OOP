@@ -18,13 +18,13 @@ public class Generator {
         int index = random1.nextInt(2);
         if(index == 0){
             return new Worker(firstNames[random.nextInt(30)],
-                    lastNames[random.nextInt(15)], random.nextDouble(5000, 10000)
-                    , random.nextInt(21));
+                    lastNames[random.nextInt(15)], random.nextInt(18,55),
+                    random.nextDouble(5000, 10000), random.nextInt(21));
         }
         else {
             return new Freelancer(firstNames[random.nextInt(30)],
-                    lastNames[random.nextInt(15)], random.nextDouble(500, 5000)
-                    , random.nextInt(160));
+                    lastNames[random.nextInt(15)],random.nextInt(18,55),
+                    random.nextDouble(500, 5000), random.nextInt(160));
         }
     }
 }

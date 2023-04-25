@@ -1,8 +1,8 @@
 public class Freelancer extends Employee{
     private int hours;
 
-    public Freelancer(String name, String lastName, double salary,int hours) {
-        super(name, lastName, salary);
+    public Freelancer(String name, String lastName,int old, double salary,int hours) {
+        super(name, lastName,old, salary);
         this.hours = hours;
     }
 
