@@ -21,7 +21,7 @@ class Box<T extends Fruit> {
             char randomLetter = letters.charAt(randomIndex);
             idBuilder.append(randomLetter);
         }
-        idBuilder.append(" - ");
+        idBuilder.append("-");
         for (int i = 0; i < 5; i++) {
             int randomIndex = random.nextInt(digits.length());
             char randomDigit = digits.charAt(randomIndex);

@@ -80,7 +80,7 @@ public class mainMenu {
                 String box1 = sc.nextLine();
                 System.out.println("с какой? (№ коробки)");
                 String box2 = sc.nextLine();
-                boxes.get(Integer.parseInt(box1)-1).compare(boxes.get(Integer.parseInt(box2) - 1));
+                System.out.println(boxes.get(Integer.parseInt(box1)-1).compare(boxes.get(Integer.parseInt(box2) - 1)));
             }
             if (str.equals("6")) {
                 return;
