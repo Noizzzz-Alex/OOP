@@ -17,13 +17,25 @@ g. Не забываем про метод добавления фрукта в 
 
 
     public static void main(String[] args) {
-        mainMenu.Menu();
-//        Apple a = new Apple(200);
-//        Orange o = new Orange(250);
-//        System.out.println(a);
-//        Box<Apple> appleBox = new Box<>();
-//        Box<Orange> orange = new Box<>();
-//        appleBox.addFruit(a);
+//        mainMenu.Menu();
+        Apple a = new Apple(200);
+        Apple a1 = new Apple(200);
+        Apple a2 = new Apple(200);
+        Apple a3 = new Apple(200);
+        Apple a4 = new Apple(200);
+        Orange o = new Orange(250);
+
+        Box<Apple> appleBox = new Box<>();
+        Box<Orange> orangeBox = new Box<>();
+        Box<Orange> orange = new Box<>();
+        appleBox.addFruit(a);
+        appleBox.addFruit(a1);
+        appleBox.addFruit(a2);
+        appleBox.addFruit(a3);
+        appleBox.addFruit(a4);
+        System.out.println(appleBox);
+        System.out.println(appleBox.getFruitName());
+
 
     }
 }
