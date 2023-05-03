@@ -6,7 +6,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        //mainMenu.Menu();
+        //views.mainMenu.Menu();
         TableModel tableModel = new TableModel();
         BookingView bookingView = new BookingView();
         BookingPresenter bookingPresenter = new BookingPresenter(tableModel,bookingView);
