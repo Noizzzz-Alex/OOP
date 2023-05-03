@@ -12,10 +12,23 @@ public class Table {
         id = ++counter;
     }
 
+    public Collection<Reservation> getReservations() {
+        return reservations;
+    }
 
     public int getId() {
         return id;
     }
 
+    public void addReservation(Reservation reservation){
+        reservations.add(reservation);
+    }
+    public void canselReservation(Reservation reservation){
+        reservations.remove(reservation);
+    }
 
+    @Override
+    public String toString() {
+        return String.format("Столик #%d",id);
+    }
 }

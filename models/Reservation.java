@@ -10,7 +10,6 @@ public class Reservation {
     {
         id = ++counter;
     }
-
     public int getId() {
         return id;
     }
