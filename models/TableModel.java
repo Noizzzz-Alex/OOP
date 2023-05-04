@@ -28,6 +28,16 @@ public class TableModel implements Model {
         }
         return tables;
     }
+    public void reservationTablesOfData(DateReservation reservationDate) {
+        System.out.println("Резервы по вашему запросу: ");
+        for (Table table : tables) {
+            for (Reservation reservation : table.getReservations()) {
+                if (reservation.getDate().equals(reservation.getDate())) {
+                    System.out.println(reservation);
+                }
+            }
+        }
+    }
 
     public int reservationTables(DateReservation reservationDate, int tableId, String name) {
         for (Table table : tables) {
@@ -41,26 +51,6 @@ public class TableModel implements Model {
     }
 
     /**
-     * Изменение резерва
-     *
-     * @param idReservationOld номер резева
-     * @param reservationNew   добавление нового резерва
-     */
-    public void editReservation(int idReservationOld, Reservation reservationNew,int tableId) {
-        for (Table table : tables) {
-            for (Reservation reservation : table.getReservations()) {
-                if (reservation.getId() == idReservationOld) {
-                    table.getReservations().remove(reservation);
-                }throw new RuntimeException("Неверный номер резерва");
-            }
-            if (table.getId() == tableId) {
-                table.getReservations().add(reservationNew);
-            }
-        }
-
-    }
-
-    /**
      * Удаление резервирования
      *
      * @param idReservationOld номер резерва
@@ -70,13 +60,14 @@ public class TableModel implements Model {
             for (Reservation reservation : table.getReservations()) {
                 if (reservation.getId() == idReservationOld) {
                     table.getReservations().remove(reservation);
-                    System.out.printf("Ваш резерв #%d удален.",reservation.getId());
+                    System.out.printf("Ваш резерв #%d удален.\n",reservation.getId());
                     return;
                 }
             }
         }
         throw new RuntimeException("Неверный номер резерва");
     }
+
 
 
 }

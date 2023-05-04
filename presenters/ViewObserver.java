@@ -11,5 +11,6 @@ public interface ViewObserver {
 
     void onReservationTable(DateReservation orderDate, int table, String name);
     void canselReservationTable(int reservationId);
+    void reservationTablesOfData(DateReservation reservationDate);
 
 }

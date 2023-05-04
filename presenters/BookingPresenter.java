@@ -53,6 +53,7 @@ public class BookingPresenter implements ViewObserver {
         updateReservationStatusView(reservationId);
     }
 
+
     /**
      * Получили уведомление о попытке отменить бронь
      * @param reservationId номер брони
@@ -60,6 +61,11 @@ public class BookingPresenter implements ViewObserver {
     @Override
     public void canselReservationTable(int reservationId) {
         model.canselReservation(reservationId);
+    }
+
+    @Override
+    public void reservationTablesOfData(DateReservation reservationDate) {
+        model.reservationTablesOfData(reservationDate);
     }
 
 

@@ -22,7 +22,7 @@ public interface Model {
      * @return номер брони
      */
     int reservationTables(DateReservation reservationDate, int tableId, String name);
-    public void editReservation(int idReservationOld, Reservation reservationNew,int tableId);
-    public void canselReservation(int idReservationOld);
+    void canselReservation(int idReservationOld);
+    void reservationTablesOfData(DateReservation reservationDate);
 
 }

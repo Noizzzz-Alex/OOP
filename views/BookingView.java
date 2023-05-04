@@ -57,6 +57,12 @@ public class BookingView implements View {
             System.out.println("Ошибка бронирования");
         }
     }
+
+    @Override
+    public void reservationTablesOfData(DateReservation reservationDate) {
+        observer.reservationTablesOfData(reservationDate);
+    }
+
     public void canselReservation(int reservationId){
         observer.canselReservationTable(reservationId);
     }

@@ -1,11 +1,9 @@
 package views;
 
 import models.DateReservation;
-import models.Reservation;
 import models.TableModel;
 import presenters.BookingPresenter;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class mainMenu {
@@ -31,7 +29,7 @@ public class mainMenu {
             System.out.print("Выберите пункт меню: ");
             str = sc.nextLine();
             if (str.equals("1")) {
-                DateReservation dateReservation = DateReservation.getDate();
+                DateReservation dateReservation = DateReservation.getDateFiveParametrs();
                 System.out.print("Введите номер желаемого столика: ");
                 int tempTableID = Integer.parseInt(sc.nextLine());
                 System.out.print("На чье имя резервировать?: ");
@@ -43,7 +41,7 @@ public class mainMenu {
             if (str.equals("2")) {
                 System.out.print("Введите номер резерва: ");
                 int tempIdReservation = Integer.parseInt(sc.nextLine());
-                DateReservation dateReservation = DateReservation.getDate();
+                DateReservation dateReservation = DateReservation.getDateFiveParametrs();
                 System.out.print("Введите номер желаемого столика: ");
                 int tempTableID = Integer.parseInt(sc.nextLine());
                 System.out.print("На чье имя резервировать?: ");
@@ -58,7 +56,8 @@ public class mainMenu {
                 bookingView.canselReservation(tempIdReservation);
             }
             if (str.equals("4")) {
-                return;
+                DateReservation dateReservation = DateReservation.getDateTreeParametrs();
+                bookingView.reservationTablesOfData(dateReservation);
             }
             if (str.equals("5")) {
                 return;

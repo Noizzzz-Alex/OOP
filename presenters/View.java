@@ -1,5 +1,6 @@
 package presenters;
 
+import models.DateReservation;
 import models.Table;
 
 import java.util.Collection;
@@ -22,4 +23,5 @@ public interface View {
      * @param reservationId номер брони
      */
     void showReservationStatus(int reservationId);
+    void reservationTablesOfData(DateReservation reservationDate);
 }

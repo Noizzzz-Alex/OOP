@@ -20,12 +20,14 @@ public class Main {
 //        BookingPresenter bookingPresenter = new BookingPresenter(tableModel,bookingView);
 //        bookingPresenter.loadTables();
 //        Table table = new Table();
-//        DateReservation date = new DateReservation(2023,05,10,14,30);
+//        DateReservation date = new DateReservation(2023,05,10);
 //        Reservation re = new Reservation(date,"Alex");
-//        System.out.println(re);
-//        System.out.println(re.getId());
-//        table.addReservation(re);
-//        bookingPresenter.canselReservationTable(1);
+//        System.out.println(date);
+//        System.out.println(re.getDate());
+//        if(date == re.getDate()){
+//            System.out.println(true);
+//        }
+
 
     }
 }
