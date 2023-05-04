@@ -65,6 +65,7 @@ public class mainMenu {
             if (str.equals("6")) {
                 bookingPresenter.updateView();
             }
+
         }
     }
 
