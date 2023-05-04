@@ -1,11 +1,11 @@
 package views;
 
+import models.DateReservation;
 import models.Table;
 import presenters.View;
 import presenters.ViewObserver;
 
 import java.util.Collection;
-import java.util.Date;
 
 public class BookingView implements View {
 
@@ -36,11 +36,11 @@ public class BookingView implements View {
      * Действие клиента(пользователь нажал на кнопку брони),
      * броникрование столика
      * @param orderDate дата бронирования
-     * @param tableid номер столика
+     * @param tableId номер столика
      * @param name имя клиента
      */
-    public void reservationTable(Date orderDate, int tableid, String name){
-        observer.onReservationTable(orderDate,tableid,name);
+    public void reservationTable(DateReservation orderDate, int tableId, String name){
+        observer.onReservationTable(orderDate,tableId,name);
     }
 
     /**
@@ -48,7 +48,7 @@ public class BookingView implements View {
      * @param reservationid номер брони
      */
     @Override
-    public void showReservStatus(int reservationid) {
+    public void showReservationStatus(int reservationid) {
         if(reservationid > 0){
             System.out.printf("Ваш столик успешно забронирован. Номер брони: #%d\n",reservationid);
         }

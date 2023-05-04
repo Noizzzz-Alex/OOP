@@ -5,7 +5,7 @@ import java.util.Date;
 public class Reservation {
     private static int counter;
     private final int id;
-    private Date date;
+    private DateReservation date;
     private String name;
     {
         id = ++counter;
@@ -14,7 +14,7 @@ public class Reservation {
         return id;
     }
 
-    public Date getDate() {
+    public DateReservation getDate() {
         return date;
     }
 
@@ -22,7 +22,7 @@ public class Reservation {
         return name;
     }
 
-    public Reservation(Date date, String name) {
+    public Reservation(DateReservation date, String name) {
         this.date = date;
         this.name = name;
     }

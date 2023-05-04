@@ -4,7 +4,6 @@ import presenters.Model;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 
 public class TableModel implements Model {
 
@@ -23,15 +22,9 @@ public class TableModel implements Model {
         return tables;
     }
 
-    @Override
-    public String toString() {
-        return "TableModel{" +
-                "tables=" + tables +
-                '}';
-    }
-    public int reservationTable(Date reservationDate,int tableid,String name){
+    public int reservationTables(DateReservation reservationDate,int tableId,String name){
         for (Table table: tables) {
-            if (table.getId() == tableid){
+            if (table.getId() == tableId){
                 Reservation reservation = new Reservation(reservationDate,name);
                 table.getReservations().add(reservation);
                 return reservation.getId();
@@ -39,4 +32,5 @@ public class TableModel implements Model {
         }
         throw new RuntimeException("Неверный номер столика");
     }
+
 }

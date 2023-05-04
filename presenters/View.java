@@ -19,7 +19,7 @@ public interface View {
 
     /**
      * Отобразитьрузельтат брони столика
-     * @param reservationid номер брони
+     * @param reservationId номер брони
      */
-    void showReservStatus(int reservationid);
+    void showReservationStatus(int reservationId);
 }

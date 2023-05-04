@@ -1,6 +1,7 @@
 package presenters;
 
 
+import models.DateReservation;
 import models.Table;
 
 import java.util.Collection;
@@ -29,23 +30,27 @@ public class BookingPresenter implements ViewObserver {
      * Отобразить список столиков
      */
     public void updateView() {
-        this.view.showTables(tables);
+        view.showTables(tables);
     }
-    private void updateReservationStatusView(int reservationId){
 
+    /**
+     * Отобразиь результат резерва
+     * @param reservationId номер резерва
+     */
+    private void updateReservationStatusView(int reservationId){
+        view.showReservationStatus(reservationId);
     }
 
     /**
      * Получили уведомление о попытке бронирования столика
      * @param orderDate дата брони
-     * @param tableid номер столика
+     * @param tableId номер столика
      * @param name имя клиента
      */
     @Override
-    public void onReservationTable(Date orderDate, int tableid, String name) {
-        int reservationid = model.reservationTables(orderDate,tableid,name);
-        if (reservationid > 0) {
-
-        }
+    public void onReservationTable(DateReservation orderDate, int tableId, String name) {
+        int reservationId = model.reservationTables(orderDate,tableId,name);
+        updateReservationStatusView(reservationId);
     }
 }
+
