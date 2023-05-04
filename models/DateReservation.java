@@ -1,5 +1,7 @@
 package models;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class DateReservation {
@@ -93,6 +95,16 @@ public class DateReservation {
         int hour = Integer.parseInt(tempTime[0]);
         int minute = Integer.parseInt(tempTime[1]);
         return new DateReservation(day, month, year, hour, minute);
+    }
+    public static DateReservation currentDate(){
+        Date currentDate = new Date();
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd-MM-yyyy");
+        String formatDate = simpleDate.format(currentDate);
+        String[] tempDate = formatDate.trim().strip().split("-");
+        int day = Integer.parseInt(tempDate[0]);
+        int month = Integer.parseInt(tempDate[1]);
+        int year = Integer.parseInt(tempDate[2]);
+        return new DateReservation(day, month, year);
     }
 
     @Override
