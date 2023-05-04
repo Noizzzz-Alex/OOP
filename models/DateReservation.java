@@ -96,7 +96,7 @@ public class DateReservation {
         int minute = Integer.parseInt(tempTime[1]);
         return new DateReservation(day, month, year, hour, minute);
     }
-    public static DateReservation currentDate(){
+    public static DateReservation getCurrentDate(){
         Date currentDate = new Date();
         SimpleDateFormat simpleDate = new SimpleDateFormat("dd-MM-yyyy");
         String formatDate = simpleDate.format(currentDate);

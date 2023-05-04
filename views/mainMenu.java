@@ -60,7 +60,8 @@ public class mainMenu {
                 bookingView.reservationTablesOfData(dateReservation);
             }
             if (str.equals("5")) {
-                return;
+                DateReservation dateReservation = DateReservation.getCurrentDate();
+                bookingView.reservationTablesOfData(dateReservation);
             }
             if (str.equals("6")) {
                 bookingPresenter.updateView();
