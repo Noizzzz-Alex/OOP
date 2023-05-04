@@ -2,10 +2,10 @@ package presenters;
 
 
 import models.DateReservation;
+import models.Reservation;
 import models.Table;
 
 import java.util.Collection;
-import java.util.Date;
 
 public class BookingPresenter implements ViewObserver {
     private final Model model;
@@ -52,5 +52,16 @@ public class BookingPresenter implements ViewObserver {
         int reservationId = model.reservationTables(orderDate,tableId,name);
         updateReservationStatusView(reservationId);
     }
+
+    /**
+     * Получили уведомление о попытке отменить бронь
+     * @param reservationId номер брони
+     */
+    @Override
+    public void canselReservationTable(int reservationId) {
+        model.canselReservation(reservationId);
+    }
+
+
 }
 

@@ -26,4 +26,9 @@ public class Reservation {
         this.date = date;
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return String.format("id# %-4d| %s |Резерв на имя: %s",id,date,name);
+    }
 }

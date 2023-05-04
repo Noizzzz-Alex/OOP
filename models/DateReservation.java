@@ -2,6 +2,7 @@ package models;
 
 import java.time.chrono.ChronoLocalDateTime;
 import java.util.Date;
+import java.util.Scanner;
 
 public class DateReservation{
     int year;
@@ -68,12 +69,17 @@ public class DateReservation{
     public void setMinute(int minute) {
         this.minute = minute;
     }
-    public static DateReservation getDate(String stringDate,String stringTime){
-        String[] tempDate = stringDate.trim().strip().split("-");
+    public static DateReservation getDate(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите желаемую дату резерва(в формате ХХ-ХХ-ХХХХ(число-месяц-год)): ");
+        String date = sc.nextLine();
+        System.out.print("Введите жедаемое время резерва (в формате ХХ-ХХ(часы-минуты)): ");
+        String time = sc.nextLine();
+        String[] tempDate = date.trim().strip().split("-");
         int day = Integer.parseInt(tempDate[0]);
         int month = Integer.parseInt(tempDate[1]);
         int year = Integer.parseInt(tempDate[2]);
-        String[]tempTime = stringTime.trim().split("-");
+        String[]tempTime = time.trim().split("-");
         int hour = Integer.parseInt(tempDate[0]);
         int minute = Integer.parseInt(tempDate[1]);
         return new DateReservation(day,month,year,hour,minute);

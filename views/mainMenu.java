@@ -1,6 +1,7 @@
 package views;
 
 import models.DateReservation;
+import models.Reservation;
 import models.TableModel;
 import presenters.BookingPresenter;
 
@@ -13,7 +14,6 @@ public class mainMenu {
         BookingView bookingView = new BookingView();
         BookingPresenter bookingPresenter = new BookingPresenter(tableModel,bookingView);
         bookingPresenter.loadTables();
-
         Scanner sc = new Scanner(System.in);
         String str = "";
         while (!(str.equals("0"))) {
@@ -21,40 +21,53 @@ public class mainMenu {
                     Ресторан "У окна":
                     ___________________________________
                     1 - Забронировать столик
-                    2 - Изменить/удалить бронь
-                    3 - Список брони по датам
-                    4 - Список брони на сегодня
-                    
+                    2 - Изменить бронь
+                    3 - Удалить бронь
+                    4 - Список брони по датам
+                    5 - Список брони на сегодня
+                    6 - Вывести список столиков
                     ___________________________________
                     0 - Выход""");
             System.out.print("Выберите пункт меню: ");
             str = sc.nextLine();
             if (str.equals("1")) {
-                System.out.print("Введите желаемую дату резерва(в формате ХХ-ХХ-ХХХХ(число-месяц-год)): ");
-                String tempDate = sc.nextLine();
-                System.out.print("Введите жедаемое время резерва (в формате ХХ-ХХ(часы-минуты)): ");
-                String tempTime = sc.nextLine();
+                DateReservation dateReservation = DateReservation.getDate();
                 System.out.print("Введите номер желаемого столика: ");
                 int tempTableID = Integer.parseInt(sc.nextLine());
                 System.out.print("На чье имя резервировать?: ");
                 str = sc.nextLine();
-                DateReservation dateReservation = DateReservation.getDate(tempDate,tempTime);
                 System.out.printf("%s, ",str);
                 bookingView.reservationTable(dateReservation,tempTableID,str);
 
             }
             if (str.equals("2")) {
-                return;
+                System.out.print("Введите номер резерва: ");
+                int tempIdReservation = Integer.parseInt(sc.nextLine());
+                DateReservation dateReservation = DateReservation.getDate();
+                System.out.print("Введите номер желаемого столика: ");
+                int tempTableID = Integer.parseInt(sc.nextLine());
+                System.out.print("На чье имя резервировать?: ");
+                String tempName = sc.nextLine();
+                System.out.printf("%s, ",tempName);
+                bookingView.canselReservation(tempIdReservation);
+                bookingView.reservationTable(dateReservation,tempTableID,tempName);
             }
             if (str.equals("3")) {
-                return;
+                System.out.print("Введите номер резерва: ");
+                int tempIdReservation = Integer.parseInt(sc.nextLine());
+                bookingView.canselReservation(tempIdReservation);
             }
             if (str.equals("4")) {
-                bookingPresenter.updateView();
+                return;
             }
             if (str.equals("5")) {
                 return;
             }
+            if (str.equals("6")) {
+                bookingPresenter.updateView();
+            }
         }
     }
+
+
 }

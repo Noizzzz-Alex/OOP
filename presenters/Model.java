@@ -1,6 +1,7 @@
 package presenters;
 
 import models.DateReservation;
+import models.Reservation;
 import models.Table;
 
 import java.util.Collection;
@@ -21,5 +22,7 @@ public interface Model {
      * @return номер брони
      */
     int reservationTables(DateReservation reservationDate, int tableId, String name);
+    public void editReservation(int idReservationOld, Reservation reservationNew,int tableId);
+    public void canselReservation(int idReservationOld);
 
 }

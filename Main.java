@@ -1,4 +1,6 @@
 import models.DateReservation;
+import models.Reservation;
+import models.Table;
 import models.TableModel;
 import presenters.BookingPresenter;
 import views.BookingView;
@@ -13,10 +15,18 @@ public class Main {
 
     public static void main(String[] args) {
         views.mainMenu.Menu();
-//        String str = "22-25-2023";
-//        String str1 ="14-30";
-//        DateReservation date = DateReservation.getDate(str,str1);
-//        System.out.println(date);
+//        TableModel tableModel = new TableModel();
+//        BookingView bookingView = new BookingView();
+//        BookingPresenter bookingPresenter = new BookingPresenter(tableModel,bookingView);
+//        bookingPresenter.loadTables();
+//        Table table = new Table();
+//        DateReservation date = new DateReservation(2023,05,10,14,30);
+//        Reservation re = new Reservation(date,"Alex");
+//        System.out.println(re);
+//        System.out.println(re.getId());
+//        table.addReservation(re);
+//        bookingPresenter.canselReservationTable(1);
+
     }
 }
 
