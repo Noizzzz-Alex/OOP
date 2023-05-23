@@ -1,10 +1,10 @@
 package observer;
 
-public class Master implements Observer {
+public class Worker implements Observer {
     private String name;
     private double salary;
 
-    public Master(String name) {
+    public Worker(String name) {
         this.name = name;
         this.salary = 80000;
     }
