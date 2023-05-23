@@ -12,11 +12,11 @@ public class Student implements Observer {
     @Override
     public void receiveOffer(String nameCompany, double salary) {
         if (this.salary < salary) {
-            System.out.printf("Студент %s >>> Мне нужна эта работа [%s - %f]\n",
+            System.out.printf(" -- Студент %8s  >>>  Мне нужна эта работа    [%8s - %.2f ]\n",
                     name, nameCompany, salary);
             this.salary = salary;
         } else {
-            System.out.printf("Студент %s >>> Я найду работу получше! [%s - %f]\n",
+            System.out.printf("Студент %8s  >>>  Я найду работу получше! [%8s - %.2f ]\n",
                     name, nameCompany, salary);
         }
     }
