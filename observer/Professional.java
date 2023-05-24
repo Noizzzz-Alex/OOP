@@ -20,4 +20,14 @@ public class Professional implements Observer{
                     name, nameCompany, salary);
         }
     }
+
+    @Override
+    public void receiveVacancy(Vacancy vacancy) {
+
+    }
+
+    @Override
+    public void agreeToVacancy() {
+
+    }
 }

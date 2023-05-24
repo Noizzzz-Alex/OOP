@@ -27,4 +27,11 @@ public class JobAgency implements Publisher {
             observer.receiveOffer(nameCompany,salary);
         }
     }
+
+    @Override
+    public void sendVacancy(Vacancy vacancy) {
+        for (Observer observer: observers) {
+            observer.receiveVacancy(vacancy);
+        }
+    }
 }
