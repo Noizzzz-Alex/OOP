@@ -1,56 +1,67 @@
 import java.util.ArrayList;
+import java.util.List;
 
-public class HRAgency implements Publisher {
-    private ArrayList<Subscriber> subscribers = new ArrayList<>();
-    private ArrayList<Vacancy> vacansies = new ArrayList<>();
+public class HRAgency extends JobAgency implements Publisher {
+    private List<Subscriber> subscribers = new ArrayList<>();
+    private List<VacancySample> vacancies = new ArrayList<>();
+    private List<Employer> companies = new ArrayList<>();
 
 
-    /**
-     * Добавление соискателей в список subscribers
-     *
-     * @param subscriber передаем соискателя
-     */
+    private String notifySubscriber = ">>> Здраствуйте,для Вас появилась новая вакансия: <<<\n";
+    private String notifyCompany = ">>> На Вашу вакансию откликнулся подходящий специалист <<<\n";
+    public HRAgency(String name) {
+        super(name);
+    }
+
+    ///////
     @Override
-    public void addSubscriber(Subscriber subscriber) {
+    public void showNotificationAcceptVacancy(Subscriber subscriber, String message, VacancySample vacancy) {
+        System.out.println("Анкета кандидата ушла в компанию");
+        if (!companies.isEmpty()) {
+            for (Employer company : companies) {
+                if (company.equals(vacancy.company)) {
+                    company.receiveNotification(subscriber, notifyCompany);
+                }
+            }
+        }
+
+    }
+
+    ////////
+    @Override
+    public void subscribe(Subscriber subscriber) {
         subscribers.add(subscriber);
     }
 
     @Override
-    public void removeSubscriber(Subscriber subscriber) {
+    public void unsubscribe(Subscriber subscriber) {
         subscribers.remove(subscriber);
     }
 
-    /**
-     * Уведомление соискателя о новой вакансии
-     *
-     * @param vacancy пока что текстом
-     */
     @Override
-    public void notifySubscriber(Vacancy vacancy, Publisher publisher) {
-        subscribers.forEach(subscriber -> subscriber.showNotification(vacancy, publisher));
-    }
-
-    /**
-     * после получения уведомления о принятии вакансии она снимается с публикации
-     * @param vacancy вакансия на вход
-     */
-    @Override
-    public void notifyAcceptVacancy(Vacancy vacancy) {
-        if ((!vacansies.isEmpty()) && (vacansies.contains(vacancy))) {
-            System.out.printf("Вакансия %10s %7s компании %8s снята с публикации\n",
-                    vacancy.getTitleVacancy(), vacancy.getNeedCompetence(), vacancy.getNameCompany());
-            vacansies.remove(vacancy);
+    public void addVacancy(VacancySample vacancy) {
+        vacancies.add(vacancy);
+        if (!subscribers.isEmpty()) {
+            for (Subscriber subscriber : subscribers) {
+                subscriber.showNotification(this, notifySubscriber, vacancy);
+            }
+        } else {
+            System.out.println("Нет кандидатов");
         }
     }
 
+    @Override
+    public void removeVacancy(VacancySample vacancy) {
+        vacancies.remove(vacancy);
+    }
 
-    /**
-     * Добавление новой вакансии в список
-     *
-     * @param vacancy передаем вакансию
-     */
-    public void uploadNewVacancy(Vacancy vacancy, Publisher publisher) {
-        vacansies.add(vacancy);
-        notifySubscriber(vacancy, publisher);
+    @Override
+    public void registerCompany(Employer company) {
+        companies.add(company);
+    }
+
+    @Override
+    public void unregisterCompany(Employer company) {
+        companies.remove(company);
     }
 }

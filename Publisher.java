@@ -1,6 +1,10 @@
 public interface Publisher {
-    public void addSubscriber(Subscriber subscriber);
-    public void removeSubscriber(Subscriber subscriber);
-    public void notifySubscriber(Vacancy vacancy,Publisher publisher);
-    public void notifyAcceptVacancy(Vacancy vacancy);
+    void showNotificationAcceptVacancy(Subscriber subscriber,String message,VacancySample vacancy);
+    void subscribe(Subscriber subscriber);
+    void unsubscribe(Subscriber subscriber);
+
+    void addVacancy(VacancySample vacancy);
+    void removeVacancy(VacancySample vacancy);
+    void registerCompany(Employer company);
+    void unregisterCompany(Employer company);
 }

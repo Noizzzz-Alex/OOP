@@ -1,11 +1,9 @@
-public class Student extends Employee implements Subscriber, CheckerVacancy {
+public class Senior extends Employee implements Subscriber, CheckerVacancy{
     String accept = "\n>>>>>>Спасибо, откликнулся";
     String decline = "\n>>>>>>>>Спасибо, обойдусь";
-
-    public Student(String name, float minSalary, String competence) {
+    public Senior(String name, float minSalary, String competence) {
         super(name, minSalary, competence);
     }
-
 
     @Override
     public void showNotification(Publisher publisher, String message, VacancySample vacancySample) {
@@ -19,10 +17,7 @@ public class Student extends Employee implements Subscriber, CheckerVacancy {
     public void check(VacancySample vacancy, Publisher publisher) {
         if (vacancy.salary < this.minSalary
                 || !vacancy.competition.equals(this.competence)
-                || vacancy.getAmountEmployees() == 0) {
-            System.out.println(decline);
-            System.out.println("________________________________");
-        } else {
+                || vacancy.getAmountEmployees() == 0) {System.out.println(decline);} else {
             System.out.println(accept);
             publisher.showNotificationAcceptVacancy(this, accept, vacancy);
         }
